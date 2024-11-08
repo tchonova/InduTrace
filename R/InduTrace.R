@@ -1,16 +1,17 @@
 
 
-library(shiny); library(shinycssloaders); library(shinyFeedback)
-library(dplyr); library(readr); library(tidyr); library(lubridate); library(ggplot2)
-library(forcats); library(tibble); library(patchwork)
-
-
 ##################
-# InduTrace_0.0.1
+# InduTrace 1.0
 #################
 
-
-InduTrace <- function(...) {
+#' Run InduTrace app
+#'
+#' This function runs the InduTrace app using Shiny.
+#'
+#' @export
+#'
+#'
+InduTrace <- function() {
 
 options(shiny.maxRequestSize=500*1024^2)
 
@@ -198,11 +199,11 @@ ui <- fluidPage(
     ###################################################################################################################
     tabPanel("Read and prioritise data",
              h2("Upload"),
-             actionLink("helpLink0", "read me"),
+             actionLink("helpLink0", "Read More"),
              fileInput(inputId = "upload", label = "", buttonLabel = "Upload data...", accept = ".csv", multiple = FALSE),
              conditionalPanel("output.panelStatus1",
                               h2("Prioritise"),
-                              actionLink("helpLink1", "read me"),
+                              actionLink("helpLink1", "Read More"),
                               br(),
                               h3("Criteria"),
                               numericInput("MI", "Maximum intensity (log10)", value = 7, min = 0, max = 100, step = 0.1),
@@ -224,7 +225,7 @@ ui <- fluidPage(
     ###################################################################################################################
     tabPanel("Classify source",
              h2("Classify"),
-             actionLink("helpLink2", "read me"),
+             actionLink("helpLink2", "Read More"),
              br(),
              numericInput("IntThreshold", "Threshold of intensity spread", value = 10, min = 0, max = 1000),
              numericInput("BreakLength", "Length of break (days)", value = 7, min = 1, max = 100),
@@ -241,7 +242,7 @@ ui <- fluidPage(
     ###################################################################################################################
     tabPanel("Detect similar profiles",
              h2("Settings"),
-             actionLink("helpLink3", "read me"),
+             actionLink("helpLink3", "Read More"),
              br(),
              selectInput("SelDist", "Method",
                          choices = list("method 1" = "euclidean",
@@ -253,7 +254,7 @@ ui <- fluidPage(
              textOutput("DistText") %>% withSpinner(color="#0dc5c1"),
              conditionalPanel("output.panelStatus4",
                               h2("Select and plot"),
-                              actionLink("helpLink4", "read me"),
+                              actionLink("helpLink4", "Read More"),
                               br(),
                               selectInput("OrderBy", "Order",
                                           choices = list("cumulative intensity", "maximum intensity", "detection frequency")),
