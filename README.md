@@ -14,13 +14,13 @@ contaminants based on their temporal patterns and identify contaminants
 with similar patterns in time-profiles from long-term, high-frequency
 river monitoring data. The application offers a user-friendly interface
 with a familiar dashboard layout. For more details, please refer to
-Chonova et al., 2024, Water Research.
+Chonova et al., 2025, Water Research.
 
 ## Citation
 
 If you use the application please cite: <br> - Chonova T., Honti M.,
 Loos M., Ruppe S., Langlois I., Griesshaber D., Fenner K., Singer H.,
-2024. Unveiling industrial emissions in a large European river: Insights
+2025. Unveiling industrial emissions in a large European river: Insights
 from data mining of high-frequency measurements. Water Research.<br>
 
 ## Installation
